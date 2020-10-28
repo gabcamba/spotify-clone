@@ -1,38 +1,39 @@
-import React from "react";
-import "./Sidebar.css";
-import SidebarOption from "./SidebarOption";
-import HomeIcon from "@material-ui/icons/HomeRounded";
-import SearchIcon from "@material-ui/icons/SearchRounded";
-import LibraryMusicIcon from "@material-ui/icons/LibraryMusicRounded";
-import { useDataLayerValue } from "./DataLayer";
+import React from 'react';
+import './Sidebar.css';
+import SidebarOption from './SidebarOption';
+import HomeIcon from '@material-ui/icons/HomeRounded';
+import SearchIcon from '@material-ui/icons/SearchRounded';
+import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
+import { useDataLayerValue } from './DataLayer';
 
 function Sidebar() {
-
-  const [{playlists}, dispatch] = useDataLayerValue();
+  const [{ playlists, recents }, dispatch] = useDataLayerValue();
   return (
-    <div className="sidebar">
+    <div className='sidebar'>
       <img
-        className="sidebar__logo"
-        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
+        className='sidebar__logo'
+        alt="logo"
+        src='https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg'
       ></img>
 
-      <SidebarOption title="Home" Icon={HomeIcon} />
-      <SidebarOption title="Search" Icon={SearchIcon} />
-      <SidebarOption title="Library" Icon={LibraryMusicIcon} />
-      <br />
-      <strong className="sidebar__title">Playlists</strong>
+      <SidebarOption title='Home' Icon={HomeIcon} />
+      <SidebarOption title='Search' Icon={SearchIcon} />
+      <SidebarOption title='Library' Icon={MusicNoteRounded} />
+      
+      <br /> {/*Playlists*/}
+      <strong className='sidebar__title'>Playlists</strong>
       <hr />
 
-      {/* <SidebarOption title="Playlst 1"  />
-      <SidebarOption title="Playlist 2" />
-      <SidebarOption title="Playlist 3" /> */}
-      {
-        playlists ?.items?.map(playlist => (
-          <SidebarOption title={playlist.name} />
-        ))
-      }
+      {playlists?.items?.map((playlist) => (
+        <SidebarOption title={playlist.name} />
+      ))}
+      <br /> {/*Recently played*/}
+      <strong className='sidebar__title'>Recently Played</strong>
+      <hr />
 
-
+      {recents?.items?.map((recent) => (
+        <SidebarOption title={recent.track.name} />
+      ))}
 
     </div>
   );

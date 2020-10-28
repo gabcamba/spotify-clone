@@ -39,10 +39,17 @@ function App() {
           playlists: playlists
         })
       })
-    }
-  }, []);
 
-  console.log(user, token, playlists)
+      spotify.getMyRecentlyPlayedTracks().then((recents) => {
+        console.log(recents)
+        dispatch({
+          type:"SET_RECENTS",
+          recents: recents
+        })
+      })
+    }
+  }, [dispatch]);
+
   return (
     <div className="App">
       {token ? <Player /> : <Login />}

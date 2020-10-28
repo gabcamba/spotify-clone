@@ -1,9 +1,10 @@
 export const initialState = {
   user: null,
   playlists: [],
+  recents: [],
   playing: false,
   item: null,
-  playlists: null,
+  // playlists: null,
   token: null
   //remove after developing
 //   token:
@@ -29,6 +30,11 @@ const reducer = (state, action) => {
         ...state,
         playlists: action.playlists,
       };
+      case "SET_RECENTS":
+        return {
+          ...state,
+          recents: action.recents,
+        };
     default:
       return state;
   }

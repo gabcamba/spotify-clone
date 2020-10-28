@@ -1,10 +1,15 @@
 .sidebarOption{
     display: flex;
     align-items: center;
-    color: grey;
+    text-align: center;
+    color:white;
     height: 40px;
     cursor: pointer;
-    transition: 170ms color ease-in;
+    transition: 250ms background-color ease-in;
+    /* background-color: pink; */
+    border-radius: 8px;
+    margin-bottom: 5px;
+    /* font-weight: 50px; */
 }
 
 .sidebar > hr {
@@ -14,7 +19,8 @@
 }
 
 .sidebarOption:hover{
-    color: white;
+    background-color: #3a3737;
+    /* color: black */
 }
 
 .sidebarOption__icon{
@@ -26,4 +32,11 @@
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
+}
+
+.sidebarOption > h6 {
+    /* margin-top: 10px;
+    margin-left: 20px;
+    font-size: 14px; */
+    padding-left: 10px;
 }
