@@ -9,20 +9,21 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
-    window.location.hash = "";
-
+    
     const _token = hash.access_token;
+    
+    spotify.setAccessToken(_token);
+    console.log(_token)
+    window.location.hash = "";
     if (_token) {
       dispatch({
-        action: "SET_TOKEN",
+        type: "SET_TOKEN",
         token: _token,
       });
-
-      spotify.setAccessToken(_token);
 
       spotify.getMe().then((user) => {
         dispatch({
@@ -32,6 +33,7 @@ function App() {
       });
 
       spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists)
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists
@@ -40,9 +42,10 @@ function App() {
     }
   }, []);
 
+  console.log(user, token, playlists)
   return (
     <div className="App">
-      {token ? <Player spotify={spotify} /> : <Login />}
+      {token ? <Player /> : <Login />}
     </div>
   );
 }
