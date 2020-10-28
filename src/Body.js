@@ -1,5 +1,5 @@
 import React from "react";
-import "./Body.css";
+import "./styles/Body.css";
 function Body() {
   return (
     <div className="body">
