@@ -1,0 +1,42 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header__left{
+    flex:0.8;
+    min-width: 70px;
+    background-color: #1d1d1d;
+    color: gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px
+}
+
+.header__left > input {
+    border: none;
+    width: 100%;
+    background-color: #1d1d1d;
+    outline: none;
+    color: white
+}
+
+.header__right{
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    justify-content: flex-end;
+    /* max-width: 300px; */
+    /* overflow: hidden; */
+}
+
+.header__right > h4 {
+    margin-left: 0px;
+}
+
+.avatar{
+    margin-right: 20px
+}

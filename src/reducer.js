@@ -4,7 +4,6 @@ export const initialState = {
   recents: [],
   playing: false,
   item: null,
-  // playlists: null,
   token: null
   //remove after developing
 //   token:

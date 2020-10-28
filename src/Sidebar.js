@@ -29,7 +29,7 @@ function Sidebar() {
       <strong className='sidebar__title'>Recently Played</strong>
       <hr />
       {recents?.items?.map((recent) => (
-        <SidebarOption title={recent.track.name} />
+        <SidebarOption thumbnail={recent.track.album.images[0].url} title={recent.track.name} />
       ))}
     </div>
   );

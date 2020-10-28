@@ -8,6 +8,9 @@
   min-width: 200px;
   padding-left: 10px;
   padding-right: 10px;
+  border-top-right-radius: 20px;
+  /* margin-left: 7px; */
+  /* margin-top: 30px; */
 }
 
 .sidebar__logo {
@@ -23,6 +26,6 @@
 .sidebar__title{
     margin-left: 5px;
     padding: 5px;
-    font-size: 12px;
+    font-size: 14px;
     color: gray
 }

@@ -19,7 +19,7 @@
 }
 
 .sidebarOption:hover{
-    background-color: #3a3737;
+    background-color: #1db954;
     /* color: black */
 }
 
@@ -37,10 +37,16 @@
 .sidebarOption > h6 {
     /* margin-top: 10px;
     margin-left: 20px; */
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 10px;
 }
 
+.sidebarOption > h5 {
+    /* margin-top: 10px;
+    margin-left: 20px; */
+    font-size: 14px;
+    /* padding-left: 10px; */
+}
 .sidebarOption__playlist_image{
     border-radius: 50%;
     height: 30px;

@@ -1,9 +1,76 @@
 .footer{
     position: fixed;
+    display:flex;
+    justify-content: space-between;
     bottom: 0;
-    height: 40px;
-    width: 100%;
-    background-color: #282828;
+    height: 50px;
+    width: 98%;
+    background-color: #141414;
     padding: 20px;
+    border-top-right-radius: 20px;
+    /* margin-top: 10px; */
     /* max-height: 20vh; */
+}
+
+.footer__left{
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+}
+
+.footer__center{
+    flex: 0.3;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.footer__right{
+    flex: 0.3;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.MuiSlider-colorPrimary{
+    color: #1db954 !important
+}
+
+.nowPlaying__art{
+    width: 50px;
+    height:50px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.footer__songInfo{
+    color: white;
+}
+
+.footer__green{
+    color: #1db954
+}
+
+.footer__songInfo > h3{
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.footer__songInfo > p{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #1db954
+}
+
+.footer__icon:hover,
+.footer__green:hover{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
 }
