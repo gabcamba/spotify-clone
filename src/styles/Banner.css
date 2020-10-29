@@ -1,5 +1,23 @@
-.banner > img{
-    border-radius: 10px;
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-around ;
+}
+
+.banner__image > img {
+  border-radius: 10px;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
-margin-bottom: 20px;
+  margin-bottom: 20px;
+  height: 35vh;
+  flex: 0.1
+  /* width: 30%; */
+}
+
+.banner__info{
+  flex: 0.9
+}
+
+.banner__info > h2{
+  font-size: 70px;
+  font-weight: 700
 }

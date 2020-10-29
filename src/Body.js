@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/Body.css';
 import Header from './Header.js';
 import Banner from './Banner.js';
@@ -9,6 +9,29 @@ import SongRow from './SongRow.js';
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
+
+  useEffect(() => {
+    console.log("body use effect", spotify)
+  })
+  const playSong = (id) => {
+    console.log(spotify)
+    spotify
+      .play({
+        uris: [`spotify:track:${id}`],
+      })
+      .then((res) => {
+        spotify.getMyCurrentPlayingTrack().then((r) => {
+          dispatch({
+            type: "SET_ITEM",
+            item: r.item,
+          });
+          dispatch({
+            type: "SET_PLAYING",
+            playing: true,
+          });
+        });
+      });
+  };
   return (
     <div className='body'>
       <Header spotify={spotify} />
@@ -31,7 +54,7 @@ function Body({ spotify }) {
         <div>
           <div className='body__songs'>
             {discover_weekly?.tracks.items.map((item) => (
-              <SongRow track={item.track} />
+              <SongRow playSong={playSong} track={item.track} />
             ))}
           </div>
         </div>
