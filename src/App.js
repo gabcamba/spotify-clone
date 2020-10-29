@@ -29,6 +29,7 @@ function App() {
         title: <p>Hi testers and collaborators! </p>,
         text: 'My repo is open for testers and pull requests! \n\n Head on to GitHub, fork my repo and create your branch! ',
         footer: 'github.com/gabcamba/gab-spotify-clone',
+        customClass: 'swal__custom'
       })
       dispatch({
         type: "SET_TOKEN",
@@ -41,6 +42,7 @@ function App() {
         });
       });
 
+      // spotify.play
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
@@ -62,6 +64,8 @@ function App() {
           recents: recents
         })
       })
+
+      // spotify.pause()
 
       spotify.getPlaylist("37i9dQZEVXcC89p75CkjPn").then(response => {
         dispatch({

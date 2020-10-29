@@ -31,37 +31,87 @@
     <div id="root"></div>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
-  <script>
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = 'BQAoOIXarUDvbuxMw5__7R6TmRJBM1j6x5ryPtvgwjkzWp40Y_eG5uiPRNfoFw_VlaNxfvxcywQb2Cs4OfcrJq1cNQtk60v2cxJ-WkDvtdWe4qWfgewnIRKLEiWEwYts5p5j7E3leXw2s2jmeRSOv3w0uH8UTS9lS-A';
-      const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
-        getOAuthToken: cb => { cb(token); }
-      });
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        const token =
+          'BQBLB9DQuHNZ4fn8QSBEWOzQhe1t-OtkT9yapg5qtJCGLVR1odM4qAxsgl0sl2UiNrRIGhJxI2wXU-z-rFktPiICIaDEJGu-cLjyRJNwZjIEPEHj-QJHLhUgRvJ_6jCELZ7MBRn_JaHNLWVbDDPA_dWDwH8FJVJM_JI';
+        const player = new Spotify.Player({
+          name: 'Web Playback SDK Quick Start Player',
+          getOAuthToken: (cb) => {
+            cb(token);
+          },
+        });
 
-      // Error handling
-      player.addListener('initialization_error', ({ message }) => { console.error(message); });
-      player.addListener('authentication_error', ({ message }) => { console.error(message); });
-      player.addListener('account_error', ({ message }) => { console.error(message); });
-      player.addListener('playback_error', ({ message }) => { console.error(message); });
+        // play({
+        //   playerInstance: new Spotify.Player({ name: 'test' }),
+        //   // spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+        // });
 
-      // Playback status updates
-      player.addListener('player_state_changed', state => { console.log(state); });
+        // Error handling
+        player.addListener('initialization_error', ({ message }) => {
+          console.error(message);
+        });
+        player.addListener('authentication_error', ({ message }) => {
+          console.error(message);
+        });
+        player.addListener('account_error', ({ message }) => {
+          console.error(message);
+        });
+        player.addListener('playback_error', ({ message }) => {
+          console.error(message);
+        });
 
-      // Ready
-      player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
-      });
+        // Playback status updates
+        player.addListener('player_state_changed', (state) => {
+          console.log(state);
+        });
 
-      // Not Ready
-      player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
-      });
+        // Ready
+        player.addListener('ready', ({ device_id }) => {
+          console.log('Ready with Device ID', device_id);
 
-      // Connect to the player!
-      player.connect();
-    };
-  </script>
+          const play = ({
+            spotify_uri,
+            playerInstance: {
+              _options: { getOAuthToken, id },
+            },
+          }) => {
+            getOAuthToken((token) => {
+              fetch(
+                `https://api.spotify.com/v1/me/player/play?device_id=${device_id}`,
+                {
+                  method: 'PUT',
+                  body: JSON.stringify({ uris: [spotify_uri] }),
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                  },
+                }
+              );
+            });
+          };
+
+          play({
+            playerInstance: player,
+            // spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+          });
+        });
+
+        // Not Ready
+        player.addListener('not_ready', ({ device_id }) => {
+          console.log('Device ID has gone offline', device_id);
+        });
+
+        // Connect to the player!
+        player.connect().then((success) => {
+          if (success) {
+            console.log(
+              'The Web Playback SDK successfully connected to Spotify!'
+            );
+          }
+        });
+      };
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

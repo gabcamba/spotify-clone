@@ -10,10 +10,9 @@ import SongRow from './SongRow.js';
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
   const playSong = (id) => {
-    console.log(spotify)
-
     spotify
       .play({
+        // playerInstance: new Spotify.Player({ name: "..." }),
         uris: [`spotify:track:${id}`],
       })
       .then((res) => {
