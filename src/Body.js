@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles/Body.css';
 import Header from './Header.js';
+import Banner from './Banner.js';
+
 import { useDataLayerValue } from './DataLayer';
 import { Favorite, MoreHoriz, PlayCircleFilled } from '@material-ui/icons';
 import SongRow from './SongRow.js';
@@ -10,7 +12,8 @@ function Body({ spotify }) {
   return (
     <div className='body'>
       <Header spotify={spotify} />
-      <div className='body__info'>
+      <Banner imageUrl={discover_weekly?.images[0].url} /> 
+      {/*<div className='body__info'>
         <div style={{display: "flex"}}>
           <img src={discover_weekly?.images[0].url} alt='hero' />
           <div className='body__infoText'>
@@ -23,7 +26,7 @@ function Body({ spotify }) {
             <Favorite fontSize='large' />
             <MoreHoriz />
           </div>
-        </div>
+  </div>*/}
 
         <div>
           <div className='body__songs'>
@@ -32,8 +35,8 @@ function Body({ spotify }) {
             ))}
           </div>
         </div>
-      </div>
-    </div>
+     {/* </div>*/}
+     </div>
   );
 }
 

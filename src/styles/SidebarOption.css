@@ -20,6 +20,8 @@
 
 .sidebarOption:hover{
     background-color: #1db954;
+    transform: scale(1.02) !important;
+
     /* color: black */
 }
 

@@ -1,16 +1,24 @@
 .songRow {
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    margin-bottom: 5px;
     padding: 20px;
     display: flex;
     align-items: center;
     z-index: 100;
     color: white;
+    border-radius: 10px;
+    transition: 200ms background-color ease-in;
+    /* transition: 200ms box-shadow ease-in-out; */
   }
   
   .songRow:hover {
     cursor: pointer;
-    background-color: black;
-    opacity: 0.8;
+    background-color: #3b3b3b;
+    transform: scale(1.02) !important;
+
+  /* box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); */
+
+    /* opacity: 0.5; */
   }
   
   .songRow__info {
