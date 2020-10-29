@@ -41,12 +41,24 @@
     margin-left: 20px; */
     font-size: 14px;
     padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 10px;
+
+    /* text-overflow: ellipsis; */
+
 }
 
 .sidebarOption > h5 {
     /* margin-top: 10px;
     margin-left: 20px; */
     font-size: 14px;
+    /* overflow-x: scroll; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* padding-right: 5px; */
+    /* text-overflow: ellipsis; */
+    /* width: 300px */
     /* padding-left: 10px; */
 }
 .sidebarOption__playlist_image{

@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles/Body.css';
 import Header from './Header.js';
 import Banner from './Banner.js';
 
 import { useDataLayerValue } from './DataLayer';
-import { Favorite, MoreHoriz, PlayCircleFilled } from '@material-ui/icons';
+// import { Favorite, MoreHoriz, PlayCircleFilled } from '@material-ui/icons';
 import SongRow from './SongRow.js';
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
-
-  useEffect(() => {
-    console.log("body use effect", spotify)
-  })
   const playSong = (id) => {
     console.log(spotify)
+
     spotify
       .play({
         uris: [`spotify:track:${id}`],
@@ -54,7 +51,7 @@ function Body({ spotify }) {
         <div>
           <div className='body__songs'>
             {discover_weekly?.tracks.items.map((item) => (
-              <SongRow playSong={playSong} track={item.track} />
+              <SongRow key={item.track.id} playSong={playSong} track={item.track} />
             ))}
           </div>
         </div>

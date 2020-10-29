@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./styles/App.css";
 import Login from "./Login";
 import Player from "./Player";
@@ -23,7 +23,6 @@ function App() {
     const _token = hash.access_token;
     
     spotify.setAccessToken(_token);
-    console.log(_token)
     window.location.hash = "";
     if (_token) {
       MySwal.fire({
@@ -43,15 +42,21 @@ function App() {
       });
 
       spotify.getUserPlaylists().then((playlists) => {
-        console.log(playlists)
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists
         })
       })
 
+      spotify.getMySavedTracks().then(tracks => {
+        // console.log("saved tracks", tracks)
+        dispatch({
+          type: 'SET_SAVED_TRACKS',
+          savedTracks: tracks
+        })
+      })
+
       spotify.getMyRecentlyPlayedTracks().then((recents) => {
-        console.log(recents)
         dispatch({
           type:"SET_RECENTS",
           recents: recents

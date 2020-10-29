@@ -7,7 +7,7 @@ import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
 import { useDataLayerValue } from './DataLayer';
 
 function Sidebar() {
-  const [{ playlists, recents }, dispatch] = useDataLayerValue();
+  const [{ playlists, recents }] = useDataLayerValue();
   return (
     <div className='sidebar'>
       <img
@@ -23,13 +23,13 @@ function Sidebar() {
       <hr />
       {playlists?.items?.map((playlist) => (
         // console.log(playlist.images[0].url)
-        <SidebarOption thumbnail={playlist.images[0].url} title={playlist.name} />
+        <SidebarOption key={playlist?.id+playlist?.snapshot_id} thumbnail={playlist?.images[0]?.url} title={playlist.name} />
       ))}
       <br /> {/*Recently played*/}
       <strong className='sidebar__title'>Recently Played</strong>
       <hr />
       {recents?.items?.map((recent) => (
-         <SidebarOption thumbnail={recent.track.album.images[0].url} title={recent.track.name} />
+         <SidebarOption key={recent.track.id+recent.played_at} thumbnail={recent.track.album.images[0].url} title={recent.track.name} />
       ))}
     </div>
   );
