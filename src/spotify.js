@@ -7,21 +7,26 @@ const redirectUri = 'http://localhost:3000/';
 const clientId = '60564527960b4e339df97c95788dce2c';
 
 const scopes = [
+  // 'ugc-image-upload',
   'user-read-currently-playing',
   'user-library-modify',
   'user-library-read',
   'user-read-recently-played',
   'user-read-playback-state',
   'user-modify-playback-state',
+  // 'user-modify-playback-position',
   'user-top-read',
   // 'user-top-read',
   'playlist-modify-private',
-  'playlist-modify-public',
   'playlist-read-collaborative',
   'playlist-read-private',
+  // 'playlist-modify-public',
   'streaming',
   'app-remote-control',
-  
+  // 'user-read-email',
+  // 'user-read-private',
+  // 'user-follow-read',
+  // 'user-follow-modify',
 ];
 
 export const getTokenFromUrl = () => {

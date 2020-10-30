@@ -1,12 +1,12 @@
-import React from "react";
-import Body from "./Body";
-import Footer from "./Footer";
-import "./styles/Player.css";
-import Sidebar from "./Sidebar";
+import React from 'react';
+import Body from './Body';
+import Footer from './Footer';
+import './styles/Player.css';
+import Sidebar from './Sidebar';
 import { useDataLayerValue } from './DataLayer';
 
-function Player({spotify}) {
-  const [{},dispatch] = useDataLayerValue();
+function Player({ spotify }) {
+  const [{}, dispatch] = useDataLayerValue();
 
   const play = (id) => {
     spotify
@@ -26,17 +26,24 @@ function Player({spotify}) {
           });
         });
       });
+
+    spotify
+      .transferMyPlayback(['124846fbd260b5cd14dfe32024f2b9e3f573357e'])
+      .then((res) => {
+        console.log(res, 'trassndfeerred!');
+      });
+
+    // spotify.tra
   };
 
   return (
-    <div className="player">
-      <div className="player__body">
-        <Sidebar play={play}/>
-        <Body play={play} spotify={spotify}/>
+    <div className='player'>
+      <div className='player__body'>
+        <Sidebar play={play} />
+        <Body play={play} spotify={spotify} />
       </div>
-      <Footer spotify={spotify}/>
+      <Footer spotify={spotify} />
     </div>
-
   );
 }
 

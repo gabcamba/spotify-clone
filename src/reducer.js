@@ -54,7 +54,7 @@ const reducer = (state, action) => {
     case 'SET_SAVED_TRACKS':
       return {
         ...state,
-        savedTracks: action.sacedTracks,
+        savedTracks: action.savedTracks,
       };
     default:
       return state;
