@@ -6,7 +6,14 @@ import SearchIcon from '@material-ui/icons/SearchRounded';
 import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
 import { useDataLayerValue } from './DataLayer';
 
-function Sidebar( {play}) {
+function Sidebar( {spotify}) {
+
+  const getPlaylistTracks = (playlistId) => {
+    spotify.getPlaylistTracks(playlistId).then(tracks => {
+      console.log("from get playlist", tracks)
+    })
+    console.log(spotify)
+  }
   const [{ userPlaylists, savedTracks }] = useDataLayerValue();
   return (
     <div className='sidebar'>
@@ -30,6 +37,7 @@ function Sidebar( {play}) {
           title={playlist.name}
           isPlaylist={true}
           isSong={false}
+          getTracks={getPlaylistTracks}
         />
       ))}
       <br /> {/*Recently played*/}

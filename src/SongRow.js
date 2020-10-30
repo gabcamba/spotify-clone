@@ -8,7 +8,7 @@ function SongRow({ item, play }) {
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   };
   return (
-    <div onClick={() => play} className='songRow'>
+    <div onClick={() => play(item.track.id)} className='songRow'>
       <img
         className='songRow__album'
         src={item.track.album.images[0].url}

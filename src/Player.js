@@ -9,6 +9,7 @@ function Player({ spotify }) {
   const [{}, dispatch] = useDataLayerValue();
 
   const play = (id) => {
+    // console.log(id)
     spotify
       .play({
         // playerInstance: new Spotify.Player({ name: "..." }),
@@ -32,15 +33,13 @@ function Player({ spotify }) {
       .then((res) => {
         console.log(res, 'trassndfeerred!');
       });
-
-    // spotify.tra
   };
 
   return (
     <div className='player'>
       <div className='player__body'>
-        <Sidebar play={play} />
-        <Body play={play} spotify={spotify} />
+        <Sidebar spotify={spotify} play={play} />
+        <Body spotify={spotify} play={play} />
       </div>
       <Footer spotify={spotify} />
     </div>
