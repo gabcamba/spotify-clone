@@ -25,6 +25,7 @@ function Sidebar( {play}) {
         // console.log(playlist.images[0].url)
         <SidebarOption
           key={playlist?.id + playlist?.snapshot_id}
+          playlist={playlist}
           thumbnail={playlist?.images[0]?.url}
           title={playlist.name}
           isPlaylist={true}

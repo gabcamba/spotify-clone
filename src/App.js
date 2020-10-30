@@ -50,6 +50,8 @@ function App() {
         });
       });
 
+      // spotify.getTracks
+
       spotify.getMySavedTracks().then((tracks) => {
         // console.log("saved tracks", tracks)
         // dispatch({

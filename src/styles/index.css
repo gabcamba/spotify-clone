@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #0c0c0c; */
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-  background-color: rgb(91, 87, 115);
+  background-color: rgb(53, 53, 53);
 }
 
 code {

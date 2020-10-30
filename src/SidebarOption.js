@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles/SidebarOption.css';
 
-function SidebarOption({ title, Icon, thumbnail, isPlaylist, isSong, play, trackId }) {
+function SidebarOption({ title, Icon, thumbnail, isPlaylist, isSong, play, trackId, playlist }) {
 
   const handleOptionClick = () => {
     if(isSong){
       play(trackId)
     } else if(isPlaylist){
-      console.log("is playlist!")
+      console.log("is playlist!", playlist)
     }
   }
   return (

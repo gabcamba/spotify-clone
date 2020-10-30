@@ -16,7 +16,7 @@ function Body({ spotify, play }) {
       <div className='body__info'>
         <div className='body__songs'>
           {displayList?.items.map((item) => (
-            <SongRow key={item.track.id} play={play} track={item.track} />
+            <SongRow key={item.track.id} play={play} item={item} />
           ))}
         </div>
       </div>

@@ -7,7 +7,10 @@
   padding: 30px;
   /* background: linear-gradient(rgb(91, 87, 115)); */
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-  background-color: rgb(91, 87, 115);
+  /* background-color: rgb(91, 87, 115); */
+  background-color: rgb(53, 53, 53);
+
+  /* background-color: black; */
   /* position: absolute; */
   margin-left: 220px;
 }
