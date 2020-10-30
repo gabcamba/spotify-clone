@@ -7,31 +7,12 @@ import { useDataLayerValue } from './DataLayer';
 // import { Favorite, MoreHoriz, PlayCircleFilled } from '@material-ui/icons';
 import SongRow from './SongRow.js';
 
-function Body({ spotify }) {
+function Body({ spotify, play }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
-  const playSong = (id) => {
-    spotify
-      .play({
-        // playerInstance: new Spotify.Player({ name: "..." }),
-        uris: [`spotify:track:${id}`],
-      })
-      .then((res) => {
-        spotify.getMyCurrentPlayingTrack().then((r) => {
-          dispatch({
-            type: "SET_ITEM",
-            item: r.item,
-          });
-          dispatch({
-            type: "SET_PLAYING",
-            playing: true,
-          });
-        });
-      });
-  };
   return (
     <div className='body'>
       <Header spotify={spotify} />
-      <Banner imageUrl={discover_weekly?.images[0].url} /> 
+      <Banner imageUrl={discover_weekly?.images[0].url} />
       {/*<div className='body__info'>
         <div style={{display: "flex"}}>
           <img src={discover_weekly?.images[0].url} alt='hero' />
@@ -47,15 +28,19 @@ function Body({ spotify }) {
           </div>
   </div>*/}
 
-        <div>
-          <div className='body__songs'>
-            {discover_weekly?.tracks.items.map((item) => (
-              <SongRow key={item.track.id} playSong={playSong} track={item.track} />
-            ))}
-          </div>
+      <div>
+        <div className='body__songs'>
+          {discover_weekly?.tracks.items.map((item) => (
+            <SongRow
+              key={item.track.id}
+              play={play}
+              track={item.track}
+            />
+          ))}
         </div>
-     {/* </div>*/}
-     </div>
+      </div>
+      {/* </div>*/}
+    </div>
   );
 }
 

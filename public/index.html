@@ -34,9 +34,9 @@
     <script>
       window.onSpotifyWebPlaybackSDKReady = () => {
         const token =
-          'BQBLB9DQuHNZ4fn8QSBEWOzQhe1t-OtkT9yapg5qtJCGLVR1odM4qAxsgl0sl2UiNrRIGhJxI2wXU-z-rFktPiICIaDEJGu-cLjyRJNwZjIEPEHj-QJHLhUgRvJ_6jCELZ7MBRn_JaHNLWVbDDPA_dWDwH8FJVJM_JI';
+          'BQDQ2dOEXadE-W0aXJcHYFkF5dFMLtcVbHts_aEzJ6BFBSGoO6W2WB0gQQvE7OL9w4AvR9haZF4kI3DFSzHpC7ZaxjbpCJt-YSJcTZ0f5wlrGAiWSMeQCR7IxV_43HktfWZOlv3J34BJvt-AtoMJVOJnh4zd9KYBLzo';
         const player = new Spotify.Player({
-          name: 'Web Playback SDK Quick Start Player',
+          name: '[App] Gab - React Web SDK',
           getOAuthToken: (cb) => {
             cb(token);
           },
@@ -70,31 +70,31 @@
         player.addListener('ready', ({ device_id }) => {
           console.log('Ready with Device ID', device_id);
 
-          const play = ({
-            spotify_uri,
-            playerInstance: {
-              _options: { getOAuthToken, id },
-            },
-          }) => {
-            getOAuthToken((token) => {
-              fetch(
-                `https://api.spotify.com/v1/me/player/play?device_id=${device_id}`,
-                {
-                  method: 'PUT',
-                  body: JSON.stringify({ uris: [spotify_uri] }),
-                  headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                  },
-                }
-              );
-            });
-          };
+          // const play = ({
+          //   spotify_uri,
+          //   playerInstance: {
+          //     _options: { getOAuthToken, id },
+          //   },
+          // }) => {
+          //   getOAuthToken((token) => {
+          //     fetch(
+          //       `https://api.spotify.com/v1/me/player/play?device_id=${device_id}`,
+          //       {
+          //         method: 'PUT',
+          //         body: JSON.stringify({ uris: [spotify_uri] }),
+          //         headers: {
+          //           'Content-Type': 'application/json',
+          //           Authorization: `Bearer ${token}`,
+          //         },
+          //       }
+          //     );
+          //   });
+          // };
 
-          play({
-            playerInstance: player,
-            // spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
-          });
+          // play({
+          //   playerInstance: player,
+          //   // spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+          // });
         });
 
         // Not Ready

@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/SearchRounded';
 import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
 import { useDataLayerValue } from './DataLayer';
 
-function Sidebar() {
+function Sidebar( {play}) {
   const [{ playlists, recents }] = useDataLayerValue();
   return (
     <div className='sidebar'>
@@ -23,13 +23,27 @@ function Sidebar() {
       <hr />
       {playlists?.items?.map((playlist) => (
         // console.log(playlist.images[0].url)
-        <SidebarOption key={playlist?.id+playlist?.snapshot_id} thumbnail={playlist?.images[0]?.url} title={playlist.name} />
+        <SidebarOption
+          key={playlist?.id + playlist?.snapshot_id}
+          thumbnail={playlist?.images[0]?.url}
+          title={playlist.name}
+          isPlaylist={true}
+          isSong={false}
+        />
       ))}
       <br /> {/*Recently played*/}
       <strong className='sidebar__title'>Recently Played</strong>
       <hr />
       {recents?.items?.map((recent) => (
-         <SidebarOption key={recent.track.id+recent.played_at} thumbnail={recent.track.album.images[0].url} title={recent.track.name} />
+        <SidebarOption
+          key={recent.track.id + recent.played_at}
+          thumbnail={recent.track.album.images[0].url}
+          title={recent.track.name}
+          isPlaylist={false}
+          isSong={true}
+          play={play}
+          trackId={recent.track.id}
+        />
       ))}
     </div>
   );
