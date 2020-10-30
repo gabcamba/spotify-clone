@@ -1,7 +1,7 @@
-.banner{
+.banner {
   display: flex;
   align-items: center;
-  justify-content: space-around ;
+  justify-content: space-around;
 }
 
 .banner__image > img {
@@ -9,15 +9,25 @@
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   height: 35vh;
-  flex: 0.1
+  width: 35vh;
+  flex: 0.1;
   /* width: 30%; */
 }
 
-.banner__info{
-  flex: 0.9
+.banner__info {
+  flex: 0.9;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+  font-weight: 700;
 }
 
-.banner__info > h2{
+.banner__info > h2 {
   font-size: 70px;
-  font-weight: 700
+  font-weight: 700;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+}
+
+.banner__info > p {
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 1);
 }

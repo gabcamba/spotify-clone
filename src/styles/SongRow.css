@@ -8,6 +8,7 @@
     color: white;
     border-radius: 10px;
     transition: 200ms background-color ease-in;
+    width: 100%;
     /* transition: 200ms box-shadow ease-in-out; */
   }
   

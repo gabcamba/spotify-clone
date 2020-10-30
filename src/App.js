@@ -43,38 +43,57 @@ function App() {
         });
       });
 
-      // spotify.play
-      spotify.getUserPlaylists().then((playlists) => {
+      spotify.getUserPlaylists().then((userPlaylists) => {
         dispatch({
-          type: 'SET_PLAYLISTS',
-          playlists: playlists,
+          type: 'SET_USER_PLAYLISTS',
+          userPlaylists: userPlaylists,
         });
       });
 
       spotify.getMySavedTracks().then((tracks) => {
         // console.log("saved tracks", tracks)
+        // dispatch({
+        //   type: 'SET_SAVED_TRACKS',
+        //   savedTracks: tracks,
+        // });
+
         dispatch({
-          type: 'SET_SAVED_TRACKS',
-          savedTracks: tracks,
-        });
+          type: 'SET_DISPLAY_LIST',
+          displayList: tracks
+        })
+
+        dispatch({
+          type: 'SET_DISPLAY_TITLE',
+          displayTitle: 'Liked Songs'
+        })
+
+        dispatch({
+          type: 'SET_DISPLAY_DESCRIPTION',
+          description: 'All your saved favorites'
+        })
+
+        dispatch({
+          type: 'SET_DISPLAY_IMAGE',
+          heroImage: 'https://placeimg.com/640/480/any'
+        })
       });
 
-      spotify.getMyRecentlyPlayedTracks().then((recents) => {
-        dispatch({
-          type: 'SET_RECENTS',
-          recents: recents,
-        });
-      });
+      // spotify.getMyRecentlyPlayedTracks().then((recents) => {
+      //   dispatch({
+      //     type: 'SET_RECENTS',
+      //     recents: recents,
+      //   });
+      // });
 
      
 
 
-      spotify.getPlaylist('37i9dQZEVXcC89p75CkjPn').then((response) => {
-        dispatch({
-          type: 'SET_DISCOVER_WEEKLY',
-          discover_weekly: response,
-        });
-      });
+      // spotify.getPlaylist('37i9dQZEVXcC89p75CkjPn').then((response) => {
+      //   dispatch({
+      //     type: 'SET_DISCOVER_WEEKLY',
+      //     discover_weekly: response,
+      //   });
+      // });
     }
   }, [dispatch]);
 

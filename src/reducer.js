@@ -6,10 +6,7 @@ export const initialState = {
   item: null,
   token: null,
   discover_weekly: null,
-  savedTracks: null
-  //remove after developing
-  //   token:
-  //     "BQBZK8ZG1cP0KRmNriw7auhaAfZKhl1QDz8pOfPNwOfzEGSmkXBkiogJyHzURdilJiJNsRgLhG7N5uRES_d1cco7X5djSClpW_5TGNZ4Z9XYN2S18ZtcvMrhGUEZmPn2VI_VooyMLUvk4U9JhdnTbIS5_JYFifFb",
+  savedTracks: null,
 };
 
 const reducer = (state, action) => {
@@ -26,21 +23,21 @@ const reducer = (state, action) => {
         ...state,
         token: action.token,
       };
-    case 'SET_PLAYLISTS':
+    case 'SET_USER_PLAYLISTS':
       return {
         ...state,
-        playlists: action.playlists,
+        userPlaylists: action.userPlaylists,
       };
-    case 'SET_RECENTS':
-      return {
-        ...state,
-        recents: action.recents,
-      };
-    case 'SET_DISCOVER_WEEKLY':
-      return {
-        ...state,
-        discover_weekly: action.discover_weekly,
-      };
+    // case 'SET_RECENTS':
+    //   return {
+    //     ...state,
+    //     recents: action.recents,
+    //   };
+    // case 'SET_DISCOVER_WEEKLY':
+    //   return {
+    //     ...state,
+    //     discover_weekly: action.discover_weekly,
+    //   };
     case 'SET_ITEM':
       return {
         ...state,
@@ -51,10 +48,30 @@ const reducer = (state, action) => {
         ...state,
         playing: action.playing,
       };
-    case 'SET_SAVED_TRACKS':
+    // case 'SET_SAVED_TRACKS':
+    //   return {
+    //     ...state,
+    //     savedTracks: action.savedTracks,
+    //   };
+    case 'SET_DISPLAY_LIST':
       return {
         ...state,
-        savedTracks: action.savedTracks,
+        displayList: action.displayList,
+      };
+    case 'SET_DISPLAY_TITLE':
+      return {
+        ...state,
+        displayTitle: action.displayTitle,
+      };
+    case 'SET_DISPLAY_DESCRIPTION':
+      return {
+        ...state,
+        description: action.description,
+      };
+    case 'SET_DISPLAY_IMAGE':
+      return {
+        ...state,
+        heroImage: action.heroImage,
       };
     default:
       return state;

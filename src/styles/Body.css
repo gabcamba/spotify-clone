@@ -9,7 +9,7 @@
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
   background-color: rgb(91, 87, 115);
   /* position: absolute; */
-  margin-left: 220px;;
+  margin-left: 220px;
 }
 
 .body__info {
@@ -40,4 +40,8 @@
 
 .body__infoText > p {
   font-size: 14px;
+}
+
+.body__songs {
+  width: 100%;
 }

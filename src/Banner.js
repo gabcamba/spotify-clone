@@ -1,16 +1,21 @@
 import React from 'react';
 import './styles/Banner.css';
+import { useDataLayerValue } from './DataLayer';
 
 function Banner({ imageUrl }) {
+  const [
+    { heroImage, description, displayTitle },
+    dispatch,
+  ] = useDataLayerValue();
   return (
-    <div className="banner">
+    <div className='banner'>
       <div className='banner__image'>
-        <img src={imageUrl} alt='' />
+        <img src={heroImage} alt='' />
       </div>
       <div className='banner__info'>
         <strong>Playlist</strong>
-        <h2>Your Discover Weekly</h2>
-        <p>Playlist details</p>
+        <h2>{displayTitle}</h2>
+        <p>{description}</p>
       </div>
     </div>
   );
