@@ -1,42 +1,52 @@
 .songRow {
-    /* margin-left: 20px; */
-    margin-bottom: 5px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    z-index: 100;
-    color: white;
-    border-radius: 10px;
-    transition: 200ms background-color ease-in;
-    width: 100%;
-    /* transition: 200ms box-shadow ease-in-out; */
-  }
-  
-  .songRow:hover {
-    cursor: pointer;
-    background-color: #3b3b3b;
-    transform: scale(1.02) !important;
+  margin-bottom: 5px;
+  padding: 20px;
+  display: flex;
+  /* align-content: flex-end; */
+  align-items: center;
+  z-index: 100;
+  color: white;
+  border-radius: 10px;
+  transition: 200ms background-color ease-in;
+  width: 100%;
+}
 
-  /* box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); */
+.songRow:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+  transform: scale(1.02) !important;
+}
 
-    /* opacity: 0.5; */
-  }
-  
-  .songRow__info {
-    margin-left: 20px;
-  }
-  
-  .songRow__info > h1 {
-    font-size: 16px;
-  }
-  
-  .songRow__info > p {
-    font-size: 14px;
-    margin-top: 3px;
-    color: gray;
-  }
-  
-  .songRow__album {
-    height: 40px;
-    width: 40px;
-  }
+.songRow__info > h1 {
+  font-size: 16px;
+}
+
+.songRow__info > p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.songRow__album {
+  height: 40px;
+  width: 40px;
+}
+
+.songRow__albumName {
+  flex: 0.4;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 50px;
+}
+
+.songRow__duration {
+  flex: 0.1;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 50px;
+}
+
+.songRow__info {
+  margin-left: 20px;
+  flex: 0.5;
+}

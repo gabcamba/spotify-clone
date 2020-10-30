@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/Footer.css';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutlineRounded';
 import SkipPreviousIcon from '@material-ui/icons/SkipPreviousRounded';
@@ -18,6 +18,17 @@ const MySwal = withReactContent(Swal);
 function Footer({ spotify }) {
   const [{ playing, item }, dispatch] = useDataLayerValue();
 
+  const [volume, setVolume] = useState(50);
+
+  const handleChange = (e, newValue) => {
+    setVolume(newValue);
+    setVolumeSpotify(volume);
+  };
+
+  const setVolumeSpotify = () => {
+    spotify.setVolume(volume);
+    console.log('setvolspoti', volume);
+  };
   const pause = () => {
     spotify.pause();
     console.log('PAUSE');
@@ -30,26 +41,24 @@ function Footer({ spotify }) {
 
   const play = () => {
     if (item) {
-      spotify
-        .play()
-        .then((res) => {
-          spotify.getMyCurrentPlayingTrack().then((r) => {
-            dispatch({
-              type: 'SET_ITEM',
-              item: r.item,
-            });
-            dispatch({
-              type: 'SET_PLAYING',
-              playing: true,
-            });
+      spotify.play().then((res) => {
+        spotify.getMyCurrentPlayingTrack().then((r) => {
+          dispatch({
+            type: 'SET_ITEM',
+            item: r.item,
+          });
+          dispatch({
+            type: 'SET_PLAYING',
+            playing: true,
           });
         });
+      });
     } else {
       MySwal.fire({
         title: <p>Uh-oh!</p>,
         text:
           'You are not currently playing any music. Please select a song from your playlists.',
-        customClass: 'swal__custom'
+        customClass: 'swal__custom',
       });
     }
   };
@@ -97,7 +106,14 @@ function Footer({ spotify }) {
           </Grid>
 
           <Grid item xs>
-            <Slider color='primary' />
+            <Slider
+              value={volume}
+              onChange={handleChange}
+              color='primary'
+              valueLabelDisplay='auto'
+              min={0}
+              max={100}
+            />
           </Grid>
         </Grid>
       </div>
