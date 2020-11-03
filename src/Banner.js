@@ -16,6 +16,7 @@ function Banner({ imageUrl }) {
         <strong>Playlist</strong>
         <h2>{displayTitle}</h2>
         <p>{description}</p>
+        <p className="playlist__by">by gabo</p>
       </div>
     </div>
   );

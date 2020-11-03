@@ -27,8 +27,12 @@
 }
 
 .banner__info > p {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 1);
   margin-top: 10px;
+}
+
+.playlist__by {
+  color:#1db954;
 }

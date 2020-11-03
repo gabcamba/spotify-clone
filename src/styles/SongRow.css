@@ -7,7 +7,7 @@
   z-index: 100;
   color: white;
   border-radius: 10px;
-  transition: 200ms background-color ease-in;
+  transition: transform .2s;
   width: 100%;
 }
 
@@ -15,7 +15,7 @@
   cursor: pointer;
   background-color: #1db9547a;
   /* opacity:1 !important; */
-  transform: scale(1.02) !important;
+  transform: scale(1.04) !important;
 }
 
 .songRow__info > h1 {
@@ -25,7 +25,7 @@
 .songRow__info > p {
   font-size: 14px;
   margin-top: 3px;
-  color: rgb(173, 173, 173);
+  color: #1db954;
 }
 
 .songRow__album {
@@ -47,16 +47,16 @@
   display: flex;
   align-items: flex-end;
   margin-left: 50px;
-  color: rgb(173, 173, 173);
+  color: #1db954;
 }
 
 .songRow__info {
   margin-left: 30px;
-  flex: 0.4;
+  flex: 0.3;
 }
 
 .songRow__dateAdded {
-  flex: 0.2;
+  flex: 0.3;
   margin-left: 40px;
   color: rgb(173, 173, 173);
 }

@@ -7,14 +7,19 @@ import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
 import { useDataLayerValue } from './DataLayer';
 
 function Sidebar( {spotify}) {
+  
+  const [{ userPlaylists, savedTracks }, dispatch] = useDataLayerValue();
 
   const getPlaylistTracks = (playlistId) => {
     spotify.getPlaylistTracks(playlistId).then(tracks => {
-      console.log("from get playlist", tracks)
+      console.log("from get playlist", tracks.items)
+      dispatch({
+        type: "SET_DISPLAY_LIST",
+        displayList: tracks
+      })
     })
-    console.log(spotify)
   }
-  const [{ userPlaylists, savedTracks }] = useDataLayerValue();
+
   return (
     <div className='sidebar'>
       <img

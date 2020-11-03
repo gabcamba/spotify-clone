@@ -7,7 +7,6 @@ function SidebarOption({ title, Icon, thumbnail, isPlaylist, isSong, play, track
     if(isSong){
       play(trackId)
     } else if(isPlaylist){
-      console.log("is playlist!", playlist.id)
       getTracks(playlist.id)
     }
   }
