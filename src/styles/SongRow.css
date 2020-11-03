@@ -2,7 +2,6 @@
   margin-bottom: 5px;
   padding: 20px;
   display: flex;
-  /* align-content: flex-end; */
   align-items: center;
   z-index: 100;
   color: white;
@@ -14,7 +13,6 @@
 .songRow:hover {
   cursor: pointer;
   background-color: #1db9547a;
-  /* opacity:1 !important; */
   transform: scale(1.04) !important;
 }
 

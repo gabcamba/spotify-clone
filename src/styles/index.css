@@ -5,8 +5,6 @@ body::-webkit-scrollbar {
 }
 * {
   margin: 0;
-  /* font-family: 'Open Sans', sans-serif; */
-  /* font-family: 'Lato', sans-serif; */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -17,7 +15,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #0c0c0c; */
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
   background-color: rgb(53, 53, 53);
 }
