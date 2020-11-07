@@ -13,7 +13,7 @@
 .songRow:hover {
   cursor: pointer;
   background-color: #1db9547a;
-  transform: scale(1.04) !important;
+  transform: scale(1.01) !important;
 }
 
 .songRow__info > h1 {

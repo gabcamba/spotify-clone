@@ -40,8 +40,8 @@ function Player({ spotify }) {
       <div className='player__body'>
         <Sidebar spotify={spotify} play={play} />
         <Body spotify={spotify} play={play} />
+        <Footer spotify={spotify} />
       </div>
-      <Footer spotify={spotify} />
     </div>
   );
 }

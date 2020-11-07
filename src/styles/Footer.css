@@ -5,10 +5,13 @@
     bottom: 0;
     height: 50px;
     width: 97.5%;
-    background-color: #141414;
+    /* background-color: #141414; */
     padding: 20px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    background: rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(200%) blur(15px);
 }
 
 .footer__left{

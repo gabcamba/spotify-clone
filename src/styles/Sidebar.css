@@ -11,6 +11,8 @@
   position: fixed;
   width: 200px;
   margin-bottom: 50px;
+  /* -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(200%) blur(10px); */
 }
 
 .sidebar::-webkit-scrollbar{
