@@ -33,5 +33,12 @@
 }
 
 .playlist__by {
-  color:#1db954;
+  color: #1db954;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.playlist__by:hover {
+  color: #2ad867;
+  transform: scale(1.01) !important;
 }

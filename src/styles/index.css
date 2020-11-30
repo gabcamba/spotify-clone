@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(20, 20, 20);
 }
 
 code {
@@ -24,13 +24,14 @@ code {
     monospace;
 }
 
-.swal__custom{
+.swal__custom {
   background-color: black !important;
   color: white !important;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
 }
 
-.swal2-content, .swal2-title{
+.swal2-content,
+.swal2-title {
   color: white !important;
 }
 
@@ -40,15 +41,14 @@ code {
 }
 
 .swal2-confirm:hover {
-  
   outline: hidden !important;
 }
 
-.swal2-container{
-  background: rgba(0,0,0,.8) !important
+.swal2-container {
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .swal2-footer {
   border-top: 1px solid #2e2e2e !important;
-  color: #1db954 !important
+  color: #1db954 !important;
 }

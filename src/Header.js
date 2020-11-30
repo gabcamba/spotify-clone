@@ -9,13 +9,13 @@ function Header({ spotify }) {
 
   return (
     <div className='header'>
-      <div className='header__left'>
+      {/*<div className='header__left'>
         <SearchIcon />
         <input
           placeholder='Search for Artists, Songs, Albums and Podcasts'
           type='text'
         />
-      </div>
+  </div>*/}
 
       <div className='header__right'>
         <Avatar

@@ -11,7 +11,7 @@ function Body({ spotify, play }) {
   const [{ displayList, heroImage }, dispatch] = useDataLayerValue();
   return (
     <div className='body'>
-      <Header spotify={spotify} />
+      {/*<Header spotify={spotify} />*/}
       <Banner imageUrl={heroImage} />
       <div className='body__info'>
         <div className='body__songs'>

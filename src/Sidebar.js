@@ -6,19 +6,18 @@ import SearchIcon from '@material-ui/icons/SearchRounded';
 import MusicNoteRounded from '@material-ui/icons/MusicNoteRounded';
 import { useDataLayerValue } from './DataLayer';
 
-function Sidebar( {spotify}) {
-  
+function Sidebar({ spotify }) {
   const [{ userPlaylists, savedTracks }, dispatch] = useDataLayerValue();
 
   const getPlaylistTracks = (playlistId) => {
-    spotify.getPlaylistTracks(playlistId).then(tracks => {
-      console.log("from get playlist", tracks.items)
+    spotify.getPlaylistTracks(playlistId).then((tracks) => {
+      console.log('from get playlist', tracks);
       dispatch({
-        type: "SET_DISPLAY_LIST",
-        displayList: tracks
-      })
-    })
-  }
+        type: 'SET_DISPLAY_LIST',
+        displayList: tracks,
+      });
+    });
+  };
 
   return (
     <div className='sidebar'>

@@ -4,7 +4,7 @@ import { useDataLayerValue } from './DataLayer';
 
 function Banner({ imageUrl }) {
   const [
-    { heroImage, description, displayTitle },
+    { heroImage, description, displayTitle, owner },
     dispatch,
   ] = useDataLayerValue();
   return (
@@ -16,7 +16,7 @@ function Banner({ imageUrl }) {
         <strong>Playlist</strong>
         <h2>{displayTitle}</h2>
         <p>{description}</p>
-        <p className="playlist__by">by gabo</p>
+        <p className='playlist__by'>by {owner}</p>
       </div>
     </div>
   );

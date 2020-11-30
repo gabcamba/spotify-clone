@@ -7,6 +7,7 @@ export const initialState = {
   token: null,
   discover_weekly: null,
   savedTracks: null,
+  owner: null,
 };
 
 const reducer = (state, action) => {
@@ -72,6 +73,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         heroImage: action.heroImage,
+      };
+    case 'SET_OWNER':
+      return {
+        ...state,
+        owner: action.owner,
       };
     default:
       return state;
