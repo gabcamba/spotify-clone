@@ -38,8 +38,9 @@ function SidebarOption({
 
       dispatch({
         type: 'SET_OWNER',
-        owner: playlist.owner.display_name,
+        owner: playlist.owner,
       });
+
     }
   };
   return (

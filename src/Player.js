@@ -9,7 +9,6 @@ function Player({ spotify }) {
   const [{}, dispatch] = useDataLayerValue();
 
   const play = (id) => {
-    // console.log(id)
     spotify
       .play({
         // playerInstance: new Spotify.Player({ name: "..." }),
@@ -31,7 +30,7 @@ function Player({ spotify }) {
     spotify
       .transferMyPlayback(['124846fbd260b5cd14dfe32024f2b9e3f573357e'])
       .then((res) => {
-        console.log(res, 'trassndfeerred!');
+        console.log(res, 'transferred to this device!');
       });
   };
 

@@ -79,13 +79,14 @@ function App() {
           heroImage: 'https://placeimg.com/640/480/any'
         })
       });
-
       // spotify.getMyRecentlyPlayedTracks().then((recents) => {
       //   dispatch({
       //     type: 'SET_RECENTS',
       //     recents: recents,
       //   });
       // });
+
+      // spotify.getUserPlaylists
 
      
 

@@ -8,6 +8,8 @@ export const initialState = {
   discover_weekly: null,
   savedTracks: null,
   owner: null,
+  userModal: null,
+  modalPlaylists: null
 };
 
 const reducer = (state, action) => {
@@ -78,6 +80,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         owner: action.owner,
+      };
+      case 'SET_USER_MODAL_DETAILS':
+      return {
+        ...state,
+        userModal: action.userModal,
+      };
+      case 'SET_USER_MODAL_PLAYLISTS':
+      return {
+        ...state,
+        modalPlaylists: action.modalPlaylists,
       };
     default:
       return state;

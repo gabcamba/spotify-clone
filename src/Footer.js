@@ -27,11 +27,9 @@ function Footer({ spotify }) {
 
   const setVolumeSpotify = () => {
     spotify.setVolume(volume);
-    console.log('setvolspoti', volume);
   };
   const pause = () => {
     spotify.pause();
-    console.log('PAUSE');
 
     dispatch({
       type: 'SET_PLAYING',

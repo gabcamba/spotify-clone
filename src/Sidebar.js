@@ -11,7 +11,6 @@ function Sidebar({ spotify }) {
 
   const getPlaylistTracks = (playlistId) => {
     spotify.getPlaylistTracks(playlistId).then((tracks) => {
-      console.log('from get playlist', tracks);
       dispatch({
         type: 'SET_DISPLAY_LIST',
         displayList: tracks,

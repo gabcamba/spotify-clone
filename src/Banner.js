@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/Banner.css';
 import { useDataLayerValue } from './DataLayer';
 
-function Banner({ imageUrl }) {
+function Banner({ toggleModal }) {
   const [
     { heroImage, description, displayTitle, owner },
     dispatch,
@@ -16,7 +16,7 @@ function Banner({ imageUrl }) {
         <strong>Playlist</strong>
         <h2>{displayTitle}</h2>
         <p>{description}</p>
-        <p className='playlist__by'>by {owner}</p>
+        <p onClick={() => toggleModal()} className='playlist__by'>by {owner?.display_name}</p>
       </div>
     </div>
   );
