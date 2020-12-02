@@ -2,7 +2,7 @@
 
 export const authEndpoint = 'https://accounts.spotify.com/authorize';
 
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://gab-spotify-clone-jcl3svzsm.vercel.app/';
 
 const clientId = '60564527960b4e339df97c95788dce2c';
 
